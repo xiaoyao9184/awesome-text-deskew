@@ -2,3 +2,4 @@ opencv-rectangle/*
 hough-transform/*
 east-model/*
 projection-score/*
+radon-transform/*
