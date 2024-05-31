@@ -8,9 +8,9 @@ Let’s categorize according to solutions:
 - [OpenCV rectangle](#opencv-rectangle)
 - [Hough Transform](#hough-transform)
 - [EAST model](#east-model)
-- [Projection score](#projection-score)
+- [Pixel projection](#pixel-projection)
 - [Radon transform](#radon-transform)
-- [Fourier Transform](#fourier-transform)
+- [Fourier projection](#fourier-projection)
 
 
 ## OpenCV rectangle
@@ -45,6 +45,7 @@ Get angle from line by the hough transform.
     - also jupyer [notebook](https://github.com/stephanefschwarz/Hough-Transform/blob/master/HoughTransform.ipynb) on github
 - [deskew with Hough Transform] - gist @github
 - [Alyn] - code @github
+- [deskew] - code @github
 
 [How-to deskew an nimage]: https://www.codeproject.com/Articles/13615/
 [Text Document Alignment using Probabilistic Houghline Transform]: https://netraneupane.medium.com/document-image-alignment-97b61eeffb20
@@ -52,6 +53,7 @@ Get angle from line by the hough transform.
 [Correcting Image Rotation with Hough Transform]: https://medium.com/wearesinch/correcting-image-rotation-with-hough-transform-e902a22ad988
 [deskew with Hough Transform]: https://gist.github.com/AdroitAnandAI/46a7fa78ca0e018bfa4c340836844131
 [Alyn]: https://github.com/kakul/Alyn
+[deskew]: https://github.com/sbrunner/deskew
 
 
 ## EAST model
@@ -68,7 +70,7 @@ Get angle from text regions detected by the EAST model.
 [Building a Scalable Image Orientation Correction System]: https://medium.com/@srihari_m_n/building-a-scalable-image-orientation-correction-system-a7214d6d879c
 
 
-## Projection score
+## Pixel projection
 
 Get angle with the minimum pixel density projection
 
@@ -106,7 +108,15 @@ Get angle with alternating pixel density projection
 ["River" detection in text]: https://dsp.stackexchange.com/questions/374/river-detection-in-text/377#377
 
 
-## Fourier Transform
+## Fourier projection
+
+just like [Pixel projection](#pixel-projection) but use DFT not image
+
+1. DFT magnitude of image
+2. Collect the pixels that the center point to the edge point at each angle from magnitude
+2. Calculate the cumulative sum of pixel values along each angle
+3. Find the angle with the highest cumulative sum
+
 
 - [Document Skewness Detection and Correction] - article @medium
     - also python [code](https://github.com/np-n/blog_code_snippets/tree/master/Document%20Skewness%20Detection%20and%20Correction) on github
