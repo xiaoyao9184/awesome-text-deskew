@@ -3,3 +3,4 @@ hough-transform/*
 east-model/*
 projection-score/*
 radon-transform/*
+dft-projection/*
